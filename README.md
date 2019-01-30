@@ -1,4 +1,4 @@
-# Dotfiles for brick
+# Dotfiles
 
 ## Swap caps lock and left control keys
 * Copy `.Xmodmap`
