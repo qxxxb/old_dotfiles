@@ -1,0 +1,9 @@
+rofi.theme: ~/.config/rofi/themes/gruvbox-dark.rasi
+rofi.kb-row-up: Up,Control+p,Shift+Tab,Shift+ISO_Left_Tab,ISO_Left_Tab
+rofi.kb-accept-entry: Control+j,Return,Control+m,KP_Enter,grave
+rofi.kb-toggle-case-sensitivity: Control+i
+rofi.kb-cancel: Control+G,Escape,Control+bracketleft,Super_L
+rofi.modi: window,run,drun
+rofi.display-window: window:
+rofi.display-run: run:
+rofi.display-drun: drun:

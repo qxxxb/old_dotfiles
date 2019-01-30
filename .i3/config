@@ -1,0 +1,333 @@
+############
+#  Colors  #
+############
+
+set $darkred #cc241d
+set $red #fb4934
+set $fadedred #9d0006
+
+set $darkgreen #98971a
+set $green #b8bb26
+set $fadedgreen #79740e
+
+set $darkyellow #d79921
+set $yellow #fabd2f
+set $fadedyellow #b57614
+
+set $darkblue #458588
+set $blue #83a598
+set $fadedblue #076678
+
+set $darkmagenta #b16286
+set $magenta #d3869b
+set $fadedmagenta #8f3f71
+
+set $darkcyan #689d6a
+set $cyan #8ec07c
+set $fadedcyan #427b58
+
+set $darkwhite #a89984
+set $white #ebdbb2
+
+set $black #070707
+
+set $background #282828
+set $foreground #ebdbb2
+
+set $darkbackground #282828
+set $darkerbackground #1d2021
+
+set $brightforeground #f2e5bc
+
+set $gray #504945
+
+set $transparent #00000000
+
+#############
+#  General  #
+#############
+
+workspace_auto_back_and_forth yes
+floating_modifier Mod1
+
+new_float none
+new_window pixel 3
+
+hide_edge_borders smart
+
+font pango:Roboto Mono Nerd Font 9
+
+###########
+#  Binds  #
+###########
+
+set $up w
+set $down s
+set $left a
+set $right d
+
+# Change focus
+bindsym Mod1+$left focus left
+bindsym Mod1+$down focus down
+bindsym Mod1+$up focus up
+bindsym Mod1+$right focus right
+
+# Move - tiling
+bindsym Mod1+Shift+$left move left
+bindsym Mod1+Shift+$down move down
+bindsym Mod1+Shift+$up move up
+bindsym Mod1+Shift+$right move right
+
+# Move - floating
+bindsym Mod1+Shift+Control+$left move left 30px
+bindsym Mod1+Shift+Control+$down move down 30px
+bindsym Mod1+Shift+Control+$up move up 30px
+bindsym Mod1+Shift+Control+$right move right 30px
+
+# Split orientation
+bindsym Mod1+x split h
+bindsym Mod1+z split v
+
+# Focus the parent/child container
+bindsym Mod1+Shift+z focus parent
+bindsym Mod1+Shift+x focus child
+
+# Enter fullscreen mode for the focused container
+bindsym Mod1+Shift+f fullscreen toggle
+
+bindsym Mod1+v layout tabbed
+bindsym Mod1+Shift+v layout default
+
+# Floating
+bindsym Mod1+f floating toggle
+bindsym Mod1+r focus mode_toggle
+
+# Scratchpad
+bindsym Mod1+Shift+minus move scratchpad
+bindsym Mod1+minus scratchpad show
+
+# Resize
+mode "resize" {
+	bindsym $left       resize shrink width 20 px or 10 ppt
+	bindsym $down       resize grow height 20 px or 10 ppt
+	bindsym $up         resize shrink height 20 px or 10 ppt
+	bindsym $right      resize grow width 20 px or 10 ppt
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym Mod1+Shift+c mode "resize"
+
+# Workspaces
+bindsym Mod1+1 workspace $ws1
+bindsym Mod1+2 workspace $ws2
+bindsym Mod1+3 workspace $ws3
+bindsym Mod1+4 workspace $ws4
+bindsym Mod1+5 workspace $ws5
+bindsym Mod1+6 workspace $ws6
+bindsym Mod1+7 workspace $ws7
+bindsym Mod1+8 workspace $ws8
+bindsym Mod1+9 workspace $ws9
+bindsym Mod1+0 workspace $ws10
+bindsym Mod1+Shift+1 move container to workspace $ws1
+bindsym Mod1+Shift+2 move container to workspace $ws2
+bindsym Mod1+Shift+3 move container to workspace $ws3
+bindsym Mod1+Shift+4 move container to workspace $ws4
+bindsym Mod1+Shift+5 move container to workspace $ws5
+bindsym Mod1+Shift+6 move container to workspace $ws6
+bindsym Mod1+Shift+7 move container to workspace $ws7
+bindsym Mod1+Shift+8 move container to workspace $ws8
+bindsym Mod1+Shift+9 move container to workspace $ws9
+bindsym Mod1+Shift+0 move container to workspace $ws10
+
+# Workspace shortcuts
+bindsym Mod1+q workspace prev
+bindsym Mod1+e workspace next
+bindsym Mod1+Shift+q move container to workspace prev
+bindsym Mod1+Shift+e move container to workspace next
+bindsym Mod1+grave workspace back_and_forth
+bindsym Mod1+Shift+Control+f move container to workspace $ws10, workspace $ws10
+
+# Focus urgent window
+bindsym Mod1+F1 [urgent="latest"] focus
+
+# i3
+bindsym Mod1+Shift+i reload
+bindsym Mod1+Shift+o restart
+
+# Exit
+bindsym Mod1+Shift+p exec ~/Programs/static/scripts/shutdown-menu.sh
+
+# Volume controls
+bindsym XF86AudioRaiseVolume \
+	exec amixer -q -D pulse sset Master 2%+ && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume \
+	exec amixer -q -D pulse sset Master 2%- && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioMute \
+	exec amixer -q -D pulse sset Master toggle && pkill -RTMIN+1 i3blocks
+
+# increase screen brightness
+bindsym XF86MonBrightnessUp exec light -A 5
+# decrease screen brightness
+bindsym XF86MonBrightnessDown exec light -U 5
+# increase screen brightness
+bindsym Shift+XF86MonBrightnessUp exec light -A 1
+# decrease screen brightness
+bindsym Shift+XF86MonBrightnessDown exec light -U 1
+
+# increase keyboard backlight brightness
+bind 248 exec light -Ars "sysfs/leds/asus::kbd_backlight" 1
+# increase keyboard backlight brightness
+bind Shift+248 exec light -Urs "sysfs/leds/asus::kbd_backlight" 1
+
+bindsym XF86Calculator exec termite --exec="ptpython"
+
+# fullscreen screenshot
+bindsym Print exec \
+	maim | \
+	tee ~/Pictures/maim/$(date -I"seconds").png | \
+	xclip -selection clipboard -t image/png && \
+	notify-send "Screenshot taken"
+# selection screenshot
+bindsym Shift+Print exec \
+	maim --select --hidecursor | \
+	tee ~/Pictures/maim/$(date -I"seconds").png | \
+	xclip -selection clipboard -t image/png && \
+	notify-send "Screenshot taken"
+# window screenshot
+bindsym Mod1+Print exec \
+	w=$(xdotool selectwindow) && \
+	maim --window=$w | \
+	tee ~/Pictures/maim/$(date -I"seconds").png | \
+	xclip -selection clipboard -t image/png && \
+	notify-send "Screenshot taken"
+
+# Quick apps
+bindsym Mod1+Return exec i3-sensible-terminal
+bindsym Mod4+e exec nemo $HOME
+
+# Rofi
+bindsym Mod1+Escape exec rofi -show drun
+bindsym Mod1+Tab exec rofi -show window
+bindsym Mod1+Shift+l exec ~/Programs/static/scripts/rofi-emoji.sh
+
+# Edit clipboard in Neovim
+bindsym Mod1+m \
+	exec xsel -b > /tmp/clipboard.txt && \
+	termite --exec="zsh -c 'nvim /tmp/clipboard.txt && cat /tmp/clipboard.txt | xsel -b -i'"
+
+# Kill focused window
+bindsym Mod1+g kill
+bindsym --release button2 kill
+
+#############
+#  Startup  #
+#############
+
+# fcitx
+exec --no-startup-id fcitx
+
+# Touchpad
+exec --no-startup-id xinput set-prop "ELAN1300:00 04F3:3057 Touchpad" \
+	"libinput Tapping Enabled" 1
+
+# Wallpaper
+exec_always --no-startup-id sh ~/.fehbg &
+
+# Compton
+exec --no-startup-id compton
+
+# Dropbox
+exec --no-startup-id dropbox start
+
+# pkexec
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+
+#############
+#  Windows  #
+#############
+
+# Don't float
+for_window [class="teeworlds"] floating disable
+
+# Start more windows floating.
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="menu"] floating enable
+
+for_window [title="cava"] border none
+for_window [class="GLava"] border none
+for_window [title="ncmpcpp.*"] border none
+
+################
+#  Workspaces  #
+################
+
+set $ws1 1: 
+#   
+set $ws2 2: 
+#    
+#    
+set $ws3 3: 
+#          
+set $ws4 4: 
+#          
+set $ws5 5: 
+#  
+set $ws6 6: 
+set $ws7 7: 
+set $ws8 8: 
+# 
+set $ws9 9: 
+#   
+set $ws10 10: 
+#            ⭘                         
+#   
+
+# Discord is an electron app and therefore has window_role="browser-window" so
+# it would be moved to the workspace for browsers if we didn't put it on top to
+# have the highest priority
+assign [class="Skype|discord"] $ws9
+assign [window_role="browser"] $ws1
+assign [class="X-terminal-emulator|Termite"] $ws2
+assign [class="Eclipse"] $ws2
+assign [window_role="filemanager"] $ws3
+assign [class="Nemo"] $ws3
+assign [class="Inkscape|Gimp-2.8|Blender|Shotwell"] $ws5
+assign [class="Soffice"] $ws4
+assign [class="Evince|Zathura"] $ws4
+assign [class="DDNet|teeworlds"] $ws10
+# assign [class="[.]*"] $ws10
+
+workspace_layout tabbed
+
+#########
+#  Bar  #
+#########
+
+bar {
+	status_command i3blocks
+	colors {
+		background $darkerbackground
+		statusline $brightforeground
+
+		# class            border            background        text
+		focused_workspace  $fadedyellow      $fadedyellow      $brightforeground
+		active_workspace   $gray             $gray             $brightforeground
+		inactive_workspace $darkerbackground $darkerbackground #888888
+		urgent_workspace   $darkred          $darkred          $brightforeground
+	}
+}
+
+# class                 border            background        text              indicator         child_border
+client.focused          $fadedyellow      $fadedyellow      $brightforeground $yellow           $fadedyellow
+client.focused_inactive $gray             $gray             $brightforeground $gray             $gray
+client.unfocused        $darkerbackground $darkerbackground $brightforeground $darkerbackground $darkerbackground
+client.urgent           $darkred          $darkred          $brightforeground $darkred          $darkred
+
+# client.focused          $fadedyellow    $fadedyellow    $brightforeground $yellow         $fadedyellow
+# client.focused_inactive $gray           $gray           $brightforeground $gray           $gray
+# client.unfocused        $background $background $brightforeground $background $background
+# client.urgent           $darkred        $darkred        $brightforeground $darkred        $darkred
