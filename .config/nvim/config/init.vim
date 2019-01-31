@@ -87,7 +87,7 @@ Plug 'tpope/vim-abolish'
 
 " Highlight current search result
 " - Should be loaded before other search plugins
-Plug 'qxxxb/vim-searchant'
+Plug 'timakro/vim-searchant'
 
 " incsearch (dependency of `incsearch-fuzzy`)
 Plug 'haya14busa/incsearch.vim'
