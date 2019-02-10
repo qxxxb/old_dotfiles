@@ -16,9 +16,6 @@ set number
 " Highlight matching [{()}]
 set showmatch
 
-" Highlight search results
-set hlsearch
-
 " Fill character for vertical split
 set fillchars+=vert:\|
 
@@ -60,6 +57,9 @@ set list
 " ==========================================================
 " Search
 " ==========================================================
+
+" Highlight search results
+set hlsearch
 
 " Incremental search
 set incsearch
@@ -124,12 +124,6 @@ if &encoding ==# 'latin1' && has('gui_running')
 endif
 
 " Not sure what this does yet
-if v:version > 703 || v:version == 703 && has("patch541")
-	" Delete comment character when joining commented lines
-	set formatoptions+=j
-endif
-
-" Not sure what this does yet
 if has('path_extra')
 	setglobal tags-=./tags tags-=./tags; tags^=./tags;
 endif
@@ -186,4 +180,4 @@ endif
 " tex
 " ==========================================================
 
-let g:tex_conceal = ""
+let g:tex_conceal=""

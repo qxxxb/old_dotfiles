@@ -139,11 +139,32 @@ let g:calendar_task_delete=1
 let g:better_whitespace_filetypes_blacklist=['votl']
 
 " ==========================================================
-" searchant
+" incsearch
 " ==========================================================
 
-let g:searchant_map_stop=0
-let g:searchant_all=1
+" These highlights disappear when the search query is submitted (i.e. when
+" `<CR>` is pressed)
+highlight link IncSearchCursor Incsearch
+highlight link IncSearchOnCursor Incsearch
 
-highlight Search cterm=reverse ctermfg=208 ctermbg=235 gui=reverse guifg=#fe8019 guibg=#282828
-highlight SearchCurrent cterm=reverse ctermfg=214 ctermbg=235 gui=reverse,bold,underline guifg=#fabd2f guibg=#282828
+" ==========================================================
+" searchhi
+" ==========================================================
+
+let g:searchhi_open_folds=1
+let g:searchhi_autocmds_enabled=1
+
+augroup searchhi
+	autocmd!
+
+	" Set blinking guicursor to make it easier to find and print search
+	" status with anzu
+	autocmd! User SearchHiOn
+		\ set guicursor=
+			\c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,
+			\n-v:block-blinkwait20-blinkon20-blinkoff20 |
+		\ AnzuUpdateSearchStatusOutput
+
+	" Set default guicursor and clear messages from anzu
+	autocmd! User SearchHiOff set guicursor& | AnzuClearSearchStatus | echo ''
+augroup END

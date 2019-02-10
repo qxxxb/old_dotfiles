@@ -86,8 +86,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-abolish'
 
 " Highlight current search result
-" - Should be loaded before other search plugins
-Plug 'timakro/vim-searchant'
+Plug 'qxxxb/vim-searchhi'
 
 " incsearch (dependency of `incsearch-fuzzy`)
 Plug 'haya14busa/incsearch.vim'

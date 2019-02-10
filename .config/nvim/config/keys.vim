@@ -161,50 +161,51 @@ nnoremap <leader>nn :NERDTree<CR>
 nnoremap <leader>nc :NERDTreeCWD<CR>
 
 " ==========================================================
-" anzu, asterisk, searchant
+" searchhi, asterisk
 " ==========================================================
 
-" Since the default block cursor inverts the BG and FG colors, use something
-" more subtle so that the cursor doesn't cover up the currently highlighted
-" search result
-function s:SearchCursorOn()
-	set guicursor=v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,n:hor50
-endfunction
+nmap / <Plug>(searchhi-/)
+nmap ? <Plug>(searchhi-?)
 
-" This is from `Stop` function in searchant. For some reason, if I use
-" `<Plug>SearchantStop` before the mapping, it doesn't work. So now I just
-" have some duplicate code
-function s:ClearSearchant()
-	if exists("w:current_match_id")
-		call matchdelete(w:current_match_id)
-		unlet w:current_match_id
-	endif
-endfunction
+nmap n <Plug>(searchhi-n)
+nmap N <Plug>(searchhi-N)
 
-function s:SearchCursorOff()
-	set guicursor=n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20
-endfunction
+nmap * <Plug>(asterisk-z*)<Plug>(searchhi-update-stay-forward)
+nmap # <Plug>(asterisk-z#)<Plug>(searchhi-update-stay-backward)
+nmap g* <Plug>(asterisk-gz*)<Plug>(searchhi-update-stay-forward)
+nmap g# <Plug>(asterisk-gz#)<Plug>(searchhi-update-stay-backward)
 
-nnoremap / :call <SID>ClearSearchant()<CR>:call <SID>SearchCursorOn()<CR>/
-map n  <Plug>(anzu-n-with-echo)
-map N  <Plug>(anzu-N-with-echo)
-map *  <Plug>(asterisk-z*)
-map #  <Plug>(asterisk-z#)
-map g* <Plug>(asterisk-gz*)
-map g# <Plug>(asterisk-gz#)
+nmap <silent> <C-L> <Plug>(searchhi-off-all)
 
-nmap <silent> <C-L>
-	\ <Plug>SearchantStop
-	\ :nohlsearch<CR>
-	\ :call <SID>SearchCursorOff()<CR>
+vmap / <Plug>(searchhi-v-/)
+vmap ? <Plug>(searchhi-v-?)
+
+vmap n <Plug>(searchhi-v-n)
+vmap N <Plug>(searchhi-v-N)
+
+" These do not use the visual variant (i.e. `searchhi-v-update-stay-backward`)
+" because these vim-asterisk commands only use the selected text as the search
+" term, so there is no need to preserve the visual selection
+"
+" These all use the backward variant because the cursor is always at or in
+" front of the start of the visual selection, so we need to search backwards
+" to get to the start position
+vmap * <Plug>(asterisk-z*)<Plug>(searchhi-update-stay-backward)
+vmap # <Plug>(asterisk-z#)<Plug>(searchhi-update-stay-backward)
+vmap g* <Plug>(asterisk-zg*)<Plug>(searchhi-update-stay-backward)
+vmap g# <Plug>(asterisk-zg#)<Plug>(searchhi-update-stay-backward)
+
+vmap <silent> <C-L> <Plug>(searchhi-v-off-all)
 
 " ==========================================================
 " incsearch-fuzzy
 " ==========================================================
 
-map z/ <Plug>(incsearch-fuzzy-/)
-map z? <Plug>(incsearch-fuzzy-?)
-map zg/ <Plug>(incsearch-fuzzy-stay)
+" Unfortunately highlighting for the current search result doesn't work for
+" these, probably because these functions also map `<CR>` in command-line mode
+nmap z/ <Plug>(incsearch-fuzzy-/)
+nmap z? <Plug>(incsearch-fuzzy-?)
+nmap zg/ <Plug>(incsearch-fuzzy-stay)
 
 " ==========================================================
 " UltiSnips
