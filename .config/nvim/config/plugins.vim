@@ -148,7 +148,7 @@ highlight link IncSearchCursor Incsearch
 highlight link IncSearchOnCursor Incsearch
 
 " ==========================================================
-" searchhi
+" searchhi, anzu
 " ==========================================================
 
 let g:searchhi_open_folds=1
