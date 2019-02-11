@@ -159,12 +159,12 @@ augroup searchhi
 
 	" Set blinking guicursor to make it easier to find and print search
 	" status with anzu
-	autocmd! User SearchHiOn
+	autocmd User SearchHiOn
 		\ set guicursor=
 			\c-sm:block,i-ci-ve:ver25,r-cr-o:hor20,
 			\n-v:block-blinkwait20-blinkon20-blinkoff20 |
 		\ AnzuUpdateSearchStatusOutput
 
 	" Set default guicursor and clear messages from anzu
-	autocmd! User SearchHiOff set guicursor& | AnzuClearSearchStatus | echo ''
+	autocmd User SearchHiOff set guicursor& | AnzuClearSearchStatus | echo ''
 augroup END
