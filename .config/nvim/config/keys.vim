@@ -192,8 +192,8 @@ vmap N <Plug>(searchhi-v-N)
 " to get to the start position
 vmap * <Plug>(asterisk-z*)<Plug>(searchhi-update-stay-backward)
 vmap # <Plug>(asterisk-z#)<Plug>(searchhi-update-stay-backward)
-vmap g* <Plug>(asterisk-zg*)<Plug>(searchhi-update-stay-backward)
-vmap g# <Plug>(asterisk-zg#)<Plug>(searchhi-update-stay-backward)
+vmap g* <Plug>(asterisk-gz*)<Plug>(searchhi-update-stay-backward)
+vmap g# <Plug>(asterisk-gz#)<Plug>(searchhi-update-stay-backward)
 
 vmap <silent> <C-L> <Plug>(searchhi-v-off-all)
 

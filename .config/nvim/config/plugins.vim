@@ -151,7 +151,6 @@ highlight link IncSearchOnCursor Incsearch
 " searchhi, anzu
 " ==========================================================
 
-let g:searchhi_open_folds=1
 let g:searchhi_autocmds_enabled=1
 
 augroup searchhi
