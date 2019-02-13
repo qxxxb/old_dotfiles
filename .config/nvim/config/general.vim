@@ -68,6 +68,14 @@ set incsearch
 set ignorecase
 set smartcase
 
+highlight Incsearch
+	\ cterm=reverse ctermfg=214 ctermbg=235
+	\ gui=reverse guifg=#fabd2f guibg=#282828
+
+highlight Search
+	\ cterm=reverse ctermfg=208 ctermbg=235
+	\ gui=reverse guifg=#fe8019 guibg=#282828
+
 " ==========================================================
 " Syntax
 " ==========================================================
