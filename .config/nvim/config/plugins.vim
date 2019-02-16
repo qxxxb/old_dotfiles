@@ -151,7 +151,7 @@ highlight link IncSearchOnCursor Incsearch
 " searchhi, anzu
 " ==========================================================
 
-let g:searchhi_autocmds_enabled=1
+let g:searchhi_user_autocmds_enabled=1
 
 augroup searchhi
 	autocmd!
@@ -167,3 +167,5 @@ augroup searchhi
 	" Set default guicursor and clear messages from anzu
 	autocmd User SearchHiOff set guicursor& | echo ''
 augroup END
+
+let g:searchhi_clear_all_autocmds = 'InsertEnter'

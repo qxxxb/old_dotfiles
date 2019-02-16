@@ -164,32 +164,28 @@ nnoremap <leader>nc :NERDTreeCWD<CR>
 " searchhi, asterisk
 " ==========================================================
 
-nmap / <Plug>(searchhi-/)
-nmap ? <Plug>(searchhi-?)
+nmap n <Plug>(searchhi-n)
+nmap N <Plug>(searchhi-N)
+nmap gd <Plug>(searchhi-gd)
+nmap gD <Plug>(searchhi-gD)
 
-vmap / <Plug>(searchhi-v-/)
-vmap ? <Plug>(searchhi-v-?)
+vmap n <Plug>(searchhi-v-n)
+vmap N <Plug>(searchhi-v-N)
+vmap gd <Plug>(searchhi-v-gd)
+vmap gD <Plug>(searchhi-v-gD)
 
-map <silent> <C-L> <Plug>(searchhi-off-all)
-map <silent> <C-L> <Plug>(searchhi-v-off-all)
+map * <Plug>(asterisk-z*)<Plug>(searchhi-update)<Plug>(searchhi-listen)
+map # <Plug>(asterisk-z#)<Plug>(searchhi-update)<Plug>(searchhi-listen)
+map g* <Plug>(asterisk-gz*)<Plug>(searchhi-update)<Plug>(searchhi-listen)
+map g# <Plug>(asterisk-gz#)<Plug>(searchhi-update)<Plug>(searchhi-listen)
 
-vmap n <Plug>(searchhi-v-n-stay)
-vmap N <Plug>(searchhi-v-N-stay)
-
-nmap n <Plug>(searchhi-n-stay)
-nmap N <Plug>(searchhi-N-stay)
-
-map * <Plug>(asterisk-z*)<Plug>(searchhi-update-stay)
-map # <Plug>(asterisk-z#)<Plug>(searchhi-update-stay)
-map g* <Plug>(asterisk-gz*)<Plug>(searchhi-update-stay)
-map g# <Plug>(asterisk-gz#)<Plug>(searchhi-update-stay)
+nmap <silent> <C-L> <Plug>(searchhi-clear-all)
+vmap <silent> <C-L> <Plug>(searchhi-v-clear-all)
 
 " ==========================================================
 " incsearch-fuzzy
 " ==========================================================
 
-" Unfortunately highlighting for the current search result doesn't work for
-" these, probably because these functions also map `<CR>` in command-line mode
 nmap z/ <Plug>(incsearch-fuzzy-/)
 nmap z? <Plug>(incsearch-fuzzy-?)
 nmap zg/ <Plug>(incsearch-fuzzy-stay)
