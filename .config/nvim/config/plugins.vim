@@ -165,5 +165,5 @@ augroup searchhi
 		\ AnzuUpdateSearchStatusOutput
 
 	" Set default guicursor and clear messages from anzu
-	autocmd User SearchHiOff set guicursor& | AnzuClearSearchStatus | echo ''
+	autocmd User SearchHiOff set guicursor& | echo ''
 augroup END

@@ -167,35 +167,22 @@ nnoremap <leader>nc :NERDTreeCWD<CR>
 nmap / <Plug>(searchhi-/)
 nmap ? <Plug>(searchhi-?)
 
-nmap n <Plug>(searchhi-n)
-nmap N <Plug>(searchhi-N)
-
-nmap * <Plug>(asterisk-z*)<Plug>(searchhi-update-stay-forward)
-nmap # <Plug>(asterisk-z#)<Plug>(searchhi-update-stay-backward)
-nmap g* <Plug>(asterisk-gz*)<Plug>(searchhi-update-stay-forward)
-nmap g# <Plug>(asterisk-gz#)<Plug>(searchhi-update-stay-backward)
-
-nmap <silent> <C-L> <Plug>(searchhi-off-all)
-
 vmap / <Plug>(searchhi-v-/)
 vmap ? <Plug>(searchhi-v-?)
 
-vmap n <Plug>(searchhi-v-n)
-vmap N <Plug>(searchhi-v-N)
+map <silent> <C-L> <Plug>(searchhi-off-all)
+map <silent> <C-L> <Plug>(searchhi-v-off-all)
 
-" These do not use the visual variant (i.e. `searchhi-v-update-stay-backward`)
-" because these vim-asterisk commands only use the selected text as the search
-" term, so there is no need to preserve the visual selection
-"
-" These all use the backward variant because the cursor is always at or in
-" front of the start of the visual selection, so we need to search backwards
-" to get to the start position
-vmap * <Plug>(asterisk-z*)<Plug>(searchhi-update-stay-backward)
-vmap # <Plug>(asterisk-z#)<Plug>(searchhi-update-stay-backward)
-vmap g* <Plug>(asterisk-gz*)<Plug>(searchhi-update-stay-backward)
-vmap g# <Plug>(asterisk-gz#)<Plug>(searchhi-update-stay-backward)
+vmap n <Plug>(searchhi-v-n-stay)
+vmap N <Plug>(searchhi-v-N-stay)
 
-vmap <silent> <C-L> <Plug>(searchhi-v-off-all)
+nmap n <Plug>(searchhi-n-stay)
+nmap N <Plug>(searchhi-N-stay)
+
+map * <Plug>(asterisk-z*)<Plug>(searchhi-update-stay)
+map # <Plug>(asterisk-z#)<Plug>(searchhi-update-stay)
+map g* <Plug>(asterisk-gz*)<Plug>(searchhi-update-stay)
+map g# <Plug>(asterisk-gz#)<Plug>(searchhi-update-stay)
 
 " ==========================================================
 " incsearch-fuzzy
