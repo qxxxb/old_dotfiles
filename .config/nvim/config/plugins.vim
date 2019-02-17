@@ -169,8 +169,12 @@ augroup searchhi
 	autocmd User SearchHiOff set guicursor& | echo g:anzu_no_match_word
 augroup END
 
-highlight AnzuSearch cterm=bold ctermfg=223 ctermbg=235 gui=bold guifg=fg guibg=bg
-let g:anzu_status_format='%#GruvboxFg4#Search: %#AnzuSearch#%p %#GruvboxYellowBold#[%i/%l]'
+highlight AnzuSearch
+	\ cterm=bold ctermfg=223 ctermbg=235
+	\ gui=bold guifg=fg guibg=bg
+
+let g:anzu_status_format=
+	\ '%#GruvboxFg4#Search: %#AnzuSearch#%p %#GruvboxYellowBold#[%i/%l]'
 
 let g:searchhi_clear_all_autocmds='InsertEnter'
 let g:searchhi_update_all_autocmds='InsertLeave'
