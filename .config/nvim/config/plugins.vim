@@ -148,10 +148,11 @@ highlight link IncSearchCursor Incsearch
 highlight link IncSearchOnCursor Incsearch
 
 " ==========================================================
-" searchhi, anzu
+" searchhi, anzu, asterisk
 " ==========================================================
 
 let g:searchhi_user_autocmds_enabled=1
+let g:searchhi_redraw_before_on=1
 
 augroup searchhi
 	autocmd!
@@ -165,7 +166,13 @@ augroup searchhi
 		\ AnzuUpdateSearchStatusOutput
 
 	" Set default guicursor and clear messages from anzu
-	autocmd User SearchHiOff set guicursor& | echo ''
+	autocmd User SearchHiOff set guicursor& | echo g:anzu_no_match_word
 augroup END
 
-let g:searchhi_clear_all_autocmds = 'InsertEnter'
+highlight AnzuSearch cterm=bold ctermfg=223 ctermbg=235 gui=bold guifg=fg guibg=bg
+let g:anzu_status_format='%#GruvboxFg4#Search: %#AnzuSearch#%p %#GruvboxYellowBold#[%i/%l]'
+
+let g:searchhi_clear_all_autocmds='InsertEnter'
+let g:searchhi_update_all_autocmds='InsertLeave'
+
+let g:asterisk#keeppos=1
