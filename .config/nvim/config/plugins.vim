@@ -175,8 +175,3 @@ highlight AnzuSearch
 
 let g:anzu_status_format=
 	\ '%#GruvboxFg4#Search: %#AnzuSearch#%p %#GruvboxYellowBold#[%i/%l]'
-
-let g:searchhi_clear_all_autocmds='InsertEnter'
-let g:searchhi_update_all_autocmds='InsertLeave'
-
-let g:asterisk#keeppos=1

@@ -1,3 +1,3 @@
 # Pure (my fork)
 
-My fork of (https://github.com/sindresorhus/pure)[Pure], a ZSH prompt
+My fork of [Pure](https://github.com/sindresorhus/pure), a ZSH prompt
