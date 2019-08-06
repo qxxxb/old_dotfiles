@@ -20,7 +20,7 @@ function javac_osu {
 }
 
 function java_osu {
-    java -enableassertions -classpath "/home/plushie/Programs/static/osu-software/components.jar:bin/:lib/*" $1
+    java -enableassertions -classpath "/home/plushie/Programs/static/osu-software/components.jar:bin/:lib/*" $@
 }
 
 function javac_test_osu {
@@ -28,5 +28,5 @@ function javac_test_osu {
 }
 
 function java_test_osu {
-    java -enableassertions -classpath "/home/plushie/Programs/static/osu-software/components.jar:/home/plushie/Programs/static/junit-4.13-beta-1.jar:/home/plushie/Programs/static/hamcrest-core-1.3.jar:bin/:lib/*" org.junit.runner.JUnitCore $1
+    java -enableassertions -classpath "/home/plushie/Programs/static/osu-software/components.jar:/home/plushie/Programs/static/junit-4.13-beta-1.jar:/home/plushie/Programs/static/hamcrest-core-1.3.jar:bin/:lib/*" org.junit.runner.JUnitCore $@
 }

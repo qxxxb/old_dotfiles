@@ -148,6 +148,12 @@ bindsym Mod1+Shift+e move container to workspace next
 bindsym Mod1+grave workspace back_and_forth
 bindsym Mod1+Shift+Control+f move container to workspace $ws10, workspace $ws10
 
+# Multi-monitor shortcuts
+bindsym Mod1+Control+$left move container to output left
+bindsym Mod1+Control+$right move container to output right
+bindsym Mod1+Control+$up move container to output up
+bindsym Mod1+Control+$down move container to output down
+
 # Focus urgent window
 bindsym Mod1+F1 [urgent="latest"] focus
 
@@ -260,6 +266,9 @@ for_window [window_type="menu"] floating enable
 for_window [title="cava"] border none
 for_window [class="GLava"] border none
 for_window [title="ncmpcpp.*"] border none
+
+# TODO: remove these
+for_window [title="MatrixRGDJ"] floating enable
 
 ################
 #  Workspaces  #

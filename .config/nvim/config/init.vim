@@ -30,7 +30,7 @@ Plug 'junegunn/fzf.vim'
 " Tag outline viewer; show current tag in status bar
 Plug 'majutsushi/tagbar'
 
-" Temporarily maximum splits (and restore it)
+" Temporarily maximize splits (and restore it)
 Plug 'szw/vim-maximizer'
 
 " Distraction-free mode
@@ -118,6 +118,9 @@ Plug 'michaeljsmith/vim-indent-object'
 " Useful mappings
 Plug 'tpope/vim-unimpaired'
 
+" Subword motions
+Plug 'chaoren/vim-wordmotion'
+
 " ==========================================================
 " PHP
 " ==========================================================
@@ -178,6 +181,15 @@ Plug 'tikhomirov/vim-glsl'
 " ==========================================================
 
 Plug 'digitaltoad/vim-pug'
+
+" ==========================================================
+" Rust
+" ==========================================================
+
+" Needs to be before rust.vim
+Plug 'cespare/vim-toml'
+
+Plug 'rust-lang/rust.vim'
 
 " ==========================================================
 " Other

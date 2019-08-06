@@ -86,6 +86,8 @@ nnoremap <leader>is4 :set tabstop=4 shiftwidth=4 expandtab<CR>:IndentLinesReset<
 nnoremap <leader>is2 :set tabstop=2 shiftwidth=2 expandtab<CR>:IndentLinesReset<CR>
 
 nnoremap <leader>ir :IndentLinesReset<CR>
+nnoremap <leader>id :IndentLinesDisable<CR>
+nnoremap <leader>in :IndentLinesEnable<CR>
 
 " ==========================================================
 " HTML indentation
@@ -225,6 +227,12 @@ nnoremap <leader>mo :MaximizerToggle<CR>
 " ==========================================================
 
 nnoremap <leader>0 :Goyo<CR>
+
+" ==========================================================
+" wordmotion
+" ==========================================================
+
+let g:wordmotion_prefix='z'
 
 " ==========================================================
 " Clipboard

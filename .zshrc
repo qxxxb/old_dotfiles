@@ -4,3 +4,5 @@ source ~/.zshrc-custom/env.zsh
 source ~/.zshrc-custom/general.zsh
 source ~/.zshrc-custom/plugins.zsh
 source ~/.zshrc-custom/aliases.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
