@@ -186,7 +186,7 @@ bind 248 exec light -Ars "sysfs/leds/asus::kbd_backlight" 1
 # increase keyboard backlight brightness
 bind Shift+248 exec light -Urs "sysfs/leds/asus::kbd_backlight" 1
 
-bindsym XF86Calculator exec termite --exec="ptpython"
+bindsym XF86Calculator exec kitty ptpython
 
 # fullscreen screenshot
 bindsym Print exec \
@@ -220,7 +220,7 @@ bindsym Mod1+Shift+l exec ~/Programs/static/scripts/rofi-emoji.sh
 # Edit clipboard in Neovim
 bindsym Mod1+m \
 	exec xsel -b > /tmp/clipboard.txt && \
-	termite --exec="zsh -c 'nvim /tmp/clipboard.txt && cat /tmp/clipboard.txt | xsel -b -i'"
+	kitty zsh -c 'nvim /tmp/clipboard.txt && cat /tmp/clipboard.txt | xsel -b -i'
 
 # Kill focused window
 bindsym Mod1+g kill
@@ -249,6 +249,9 @@ exec --no-startup-id dropbox start
 # pkexec
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
+# nm-applet
+exec --no-startup-id nm-applet
+
 #############
 #  Windows  #
 #############
@@ -269,6 +272,7 @@ for_window [title="ncmpcpp.*"] border none
 
 # TODO: remove these
 for_window [title="MatrixRGDJ"] floating enable
+for_window [title="Cat and mouse"] floating enable
 
 ################
 #  Workspaces  #
@@ -300,7 +304,7 @@ set $ws10 10: 
 # have the highest priority
 assign [class="Skype|discord"] $ws9
 assign [window_role="browser"] $ws1
-assign [class="X-terminal-emulator|Termite"] $ws2
+assign [class="X-terminal-emulator|Termite|kitty"] $ws2
 assign [class="Eclipse"] $ws2
 assign [window_role="filemanager"] $ws3
 assign [class="Nemo"] $ws3

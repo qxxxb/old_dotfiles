@@ -141,16 +141,16 @@ mkdir ~/.config/mpd/playlists
 
 ## Nemo open in terminal
 * Install `dconf-editor`
-* Change `org.cinnamon.desktop.default-applications.terminal.exec` to `termite`
-* Change `org.cinnamon.desktop.default-applications.terminal.exec-args` to `-e`
+* Change `org.cinnamon.desktop.default-applications.terminal.exec` to `kitty`
+* Change `org.cinnamon.desktop.default-applications.terminal.exec-args` to an empty string
 
-## Nemo use Neovim in termite
-* Create the file `/home/plushie/.local/share/applications/nvim-termite.desktop` (if not already there)
+## Nemo use Neovim in kitty
+* Create the file `/home/plushie/.local/share/applications/nvim-kitty.desktop` (if not already there)
 * Add this to the file:
 
 ```
 [Desktop Entry]
-Name=Neovim Termite
+Name=Neovim Kitty
 GenericName=Text Editor
 GenericName[de]=Texteditor
 Comment=Edit text files
@@ -221,7 +221,7 @@ Comment[vi]=Soạn thảo tập tin văn bản
 Comment[wa]=Asspougnî des fitchîs tecses
 Comment[zh_CN]=编辑文本文件
 Comment[zh_TW]=編輯文字檔
-Exec=termite -e "nvim %F" %f
+Exec=kitty nvim %F
 Type=Application
 Keywords=Text;editor;
 Icon=nvim

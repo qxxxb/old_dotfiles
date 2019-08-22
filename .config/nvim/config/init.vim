@@ -6,9 +6,13 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Pretty statusline
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Gruvbox colorscheme
 Plug 'morhetz/gruvbox'
+
+" Palenight colorscheme
+Plug 'drewtempelmeyer/palenight.vim'
 
 " Icons
 Plug 'ryanoasis/vim-devicons'

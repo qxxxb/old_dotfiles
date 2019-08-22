@@ -264,3 +264,28 @@ nnoremap <silent> <leader>* :set spell!<CR>
 
 " Search and replace selected text
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+" ==========================================================
+" colorschemes
+" ==========================================================
+
+nnoremap <silent> <leader>_1 :let g:gruvbox_contrast_dark="hard"<CR>
+	\:colorscheme gruvbox<CR>
+	\:let g:airline_theme='gruvbox'<CR>
+	\:AirlineRefresh<CR>
+	\:autocmd! User FzfStatusLine call FzfStatuslineGruvbox()<CR>
+nnoremap <silent> <leader>_2 :let g:gruvbox_contrast_dark="medium"<CR>
+	\:colorscheme gruvbox<CR>
+	\:let g:airline_theme='gruvbox'<CR>
+	\:AirlineRefresh<CR>
+	\:autocmd! User FzfStatusLine call FzfStatuslineGruvbox()<CR>
+nnoremap <silent> <leader>_3 :let g:gruvbox_contrast_dark="soft"<CR>
+	\:colorscheme gruvbox<CR>
+	\:let g:airline_theme='gruvbox'<CR>
+	\:AirlineRefresh<CR>
+	\:autocmd! User FzfStatusLine call FzfStatuslineGruvbox()<CR>
+
+nnoremap <silent> <leader>_p :colorscheme palenight<CR>
+	\:let g:airline_theme='palenight'<CR>
+	\:AirlineRefresh<CR>
+	\:autocmd! User FzfStatusLine call FzfStatuslinePalenight()<CR>

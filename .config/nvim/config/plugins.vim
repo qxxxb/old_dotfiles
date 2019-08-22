@@ -3,8 +3,20 @@
 " ==========================================================
 
 let g:airline_powerline_fonts=1
-let g:airline_theme="gruvbox"
+let g:airline_theme='palenight'
 let g:airline#extensions#tabline#enabled=1
+
+if !exists('g:airline_symbols')
+let g:airline_symbols = {}
+endif
+
+let g:airline_symbols.dirty='*'
+
+let g:airline_mode_map = {
+	\ 'n'  : 'N',
+	\ 'ni' : 'N',
+	\ 'no' : 'N'
+	\ }
 
 " ==========================================================
 " devicons
@@ -26,7 +38,7 @@ let g:indentLine_fileTypeExclude=['org', 'calendar']
 let $FZF_DEFAULT_OPTS='--height 50% --reverse --prompt=\ ' .
 \ ' --bind ctrl-a:select-all --bind ctrl-d:deselect-all'
 
-function! s:fzf_statusline()
+function! FzfStatuslineGruvbox()
 	highlight default fzf1 gui=bold guifg=#282828 guibg=#458588
 	highlight default fzf2 guifg=#458588 guibg=#504945
 	highlight default fzf3 guifg=#504945 guibg=#3c3836
@@ -34,7 +46,16 @@ function! s:fzf_statusline()
 	setlocal statusline=%#fzf1#\ FZF\ %#fzf2#%#fzf3#%#fzf4#
 endfunction
 
-autocmd! User FzfStatusLine call <SID>fzf_statusline()
+function! FzfStatuslinePalenight()
+	let colors = palenight#GetColors()
+	execute 'highlight default fzf1 gui=bold guifg=' . colors.black.gui . ' guibg=' . colors.blue.gui
+	execute 'highlight default fzf2 guifg=' . colors.blue.gui . ' guibg=' . colors.white_mask_3.gui
+	execute 'highlight default fzf3 guifg=' . colors.white_mask_3.gui . ' guibg=' . colors.white_mask_1.gui
+	execute 'highlight default fzf4 guifg=' . colors.white.gui . ' guibg=' . colors.white_mask_1.gui
+	setlocal statusline=%#fzf1#\ FZF\ %#fzf2#%#fzf3#%#fzf4#
+endfunction
+
+autocmd! User FzfStatusLine call FzfStatuslinePalenight()
 
 " ==========================================================
 " gitgutter
@@ -129,7 +150,6 @@ let g:org_indent=1
 
 let g:calendar_google_calendar=1
 let g:calendar_google_task=1
-let g:calendar_task_delete=1
 
 " ==========================================================
 " better-whitespace

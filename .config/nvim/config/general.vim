@@ -4,8 +4,12 @@
 
 " Colorscheme
 set background=dark
+
 let g:gruvbox_italic=1
-colorscheme gruvbox
+let g:gruvbox_contrast_dark="medium"
+let g:palenight_terminal_italics=1
+
+colorscheme palenight
 if (has("termguicolors"))
 	set termguicolors
 endif
