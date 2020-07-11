@@ -123,7 +123,7 @@ nnoremap <silent> <leader>A :Windows<CR>
 nnoremap <silent> <leader>o :BTags<CR>
 nnoremap <silent> <leader>O :Tags<CR>
 nnoremap <silent> <leader>? :History<CR>
-nnoremap <leader>/ :Ag<space>
+nnoremap <leader>/ :Rg<space>
 
 nnoremap <silent> <leader>gl :Commits<CR>
 nnoremap <silent> <leader>ga :BCommits<CR>
@@ -196,8 +196,8 @@ nmap zg/ <Plug>(incsearch-fuzzy-stay)
 " UltiSnips
 " ==========================================================
 
-let g:UltiSnipsExpandTrigger="<C-a>"
-let g:UltiSnipsListSnippets="<C-A-a>"
+let g:UltiSnipsExpandTrigger="<C-q>"
+let g:UltiSnipsListSnippets="<C-A-q>"
 
 " ==========================================================
 " ALE
@@ -251,6 +251,15 @@ nnoremap <leader>fe :set foldmethod?<CR>
 nnoremap <leader>fm :set foldmethod=manual<CR>
 nnoremap <leader>fi :set foldmethod=indent<CR>
 nnoremap <leader>fk :set foldmethod=marker<CR>
+
+" ==========================================================
+" Conceal
+" ==========================================================
+
+nnoremap <leader>l0 :set conceallevel=0<CR>
+nnoremap <leader>l1 :set conceallevel=1<CR>
+nnoremap <leader>l2 :set conceallevel=2<CR>
+nnoremap <leader>l3 :set conceallevel=3<CR>
 
 " ==========================================================
 " Other

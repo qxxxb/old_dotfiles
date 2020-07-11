@@ -188,7 +188,7 @@ prompt_pure_preprompt_render() {
 	local -a preprompt_parts
 
 	# Set the path.
-	preprompt_segment '%~' yellow black regular left
+	preprompt_segment '%~' yellow 235 bold left
 	preprompt_parts+=$CURRENT_SEGMENT
 
 	# Add git branch and dirty status info.
@@ -205,7 +205,7 @@ prompt_pure_preprompt_render() {
 
 	# Username and machine, if applicable.
 	if [[ -n $prompt_pure_username ]]; then
-		preprompt_segment '${prompt_pure_username}' red yellow bold left
+		preprompt_segment '${prompt_pure_username}' 237 default regular left
 		preprompt_parts+=$CURRENT_SEGMENT
 	fi
 	# Execution time.

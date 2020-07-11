@@ -257,7 +257,7 @@ exec --no-startup-id nm-applet
 #############
 
 # Don't float
-for_window [class="teeworlds"] floating disable
+for_window [class="teeworlds"] floating enable
 
 # Start more windows floating.
 for_window [window_role="pop-up"] floating enable
@@ -271,7 +271,7 @@ for_window [class="GLava"] border none
 for_window [title="ncmpcpp.*"] border none
 
 # TODO: remove these
-for_window [title="MatrixRGDJ"] floating enable
+for_window [title="MatrixRGDJ|MatrixORIRT"] floating enable
 for_window [title="Cat and mouse"] floating enable
 
 ################
@@ -303,8 +303,8 @@ set $ws10 10: 
 # it would be moved to the workspace for browsers if we didn't put it on top to
 # have the highest priority
 assign [class="Skype|discord"] $ws9
+assign [class="X-terminal-emulator|Termite|kitty|Code"] $ws2
 assign [window_role="browser"] $ws1
-assign [class="X-terminal-emulator|Termite|kitty"] $ws2
 assign [class="Eclipse"] $ws2
 assign [window_role="filemanager"] $ws3
 assign [class="Nemo"] $ws3

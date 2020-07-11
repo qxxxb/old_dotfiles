@@ -3,7 +3,7 @@
 " ==========================================================
 
 let g:airline_powerline_fonts=1
-let g:airline_theme='palenight'
+let g:airline_theme='gruvbox'
 let g:airline#extensions#tabline#enabled=1
 
 if !exists('g:airline_symbols')
@@ -39,10 +39,10 @@ let $FZF_DEFAULT_OPTS='--height 50% --reverse --prompt=\ ' .
 \ ' --bind ctrl-a:select-all --bind ctrl-d:deselect-all'
 
 function! FzfStatuslineGruvbox()
-	highlight default fzf1 gui=bold guifg=#282828 guibg=#458588
-	highlight default fzf2 guifg=#458588 guibg=#504945
-	highlight default fzf3 guifg=#504945 guibg=#3c3836
-	highlight default fzf4 guifg=#ebdbb2 guibg=#3c3836
+	highlight default fzf1 gui=bold guifg=#282828 guibg=#458588 cterm=bold ctermfg=235 ctermbg=66
+	highlight default fzf2 guifg=#458588 guibg=#504945 ctermfg=66 ctermbg=239
+	highlight default fzf3 guifg=#504945 guibg=#3c3836 ctermfg=239 ctermbg=237
+	highlight default fzf4 guifg=#ebdbb2 guibg=#3c3836 ctermbg=223 ctermbg=237
 	setlocal statusline=%#fzf1#\ FZF\ %#fzf2#%#fzf3#%#fzf4#
 endfunction
 
@@ -55,7 +55,7 @@ function! FzfStatuslinePalenight()
 	setlocal statusline=%#fzf1#\ FZF\ %#fzf2#%#fzf3#%#fzf4#
 endfunction
 
-autocmd! User FzfStatusLine call FzfStatuslinePalenight()
+autocmd! User FzfStatusLine call FzfStatuslineGruvbox()
 
 " ==========================================================
 " gitgutter
@@ -119,6 +119,7 @@ let g:ale_fixers['python']=['autopep8', 'yapf']
 
 let g:ale_rust_cargo_use_clippy=1
 let g:ale_fixers['rust']=['rustfmt']
+let g:ale_c_parse_compile_commands=1
 
 " ==========================================================
 " matchup
@@ -137,6 +138,8 @@ let g:closetag_filenames='*.html,*.xhtml,*.phtml,*.php'
 " ==========================================================
 
 let g:vim_markdown_new_list_item_indent=2
+let g:vim_markdown_conceal=0
+let g:vim_markdown_conceal_code_blocks=0
 
 " ==========================================================
 " orgmode
@@ -198,3 +201,9 @@ highlight AnzuSearch
 
 let g:anzu_status_format=
 	\ '%#GruvboxFg4#Search: %#AnzuSearch#%p %#GruvboxYellowBold#[%i/%l]'
+
+" ==========================================================
+" UltiSnips
+" ==========================================================
+
+let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME . "/.config/nvim/UltiSnips"]

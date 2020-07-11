@@ -9,7 +9,7 @@ let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark="medium"
 let g:palenight_terminal_italics=1
 
-colorscheme palenight
+colorscheme gruvbox
 if (has("termguicolors"))
 	set termguicolors
 endif
@@ -84,7 +84,7 @@ highlight Search
 " Syntax
 " ==========================================================
 
-autocmd FileType c,cpp,cs,java,php setlocal commentstring=//\ %s
+autocmd FileType cpp,cs,java,php setlocal commentstring=//\ %s
 
 " ==========================================================
 " Other
