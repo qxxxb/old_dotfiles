@@ -1,0 +1,143 @@
+{
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "<leader>"],
+            "commands": ["workbench.action.quickOpen"]
+        },
+        {
+            // I can't find a "quickOpen" only for opened files, but this is
+            // close enough
+            "before": ["<leader>", "a"],
+            "commands": ["workbench.action.quickOpen"]
+        },
+        {
+            "before": ["<leader>", "A"],
+            "commands": ["workbench.action.quickOpenView"]
+        },
+        {
+            "before": ["<leader>", "?"],
+            "commands": ["workbench.action.quickOpenRecent"]
+        },
+        {
+            "before": ["<leader>", "q"],
+            "commands": ["workbench.action.closeActiveEditor"]
+        },
+        {
+            "before": ["[", "e"],
+            "commands": ["editor.action.moveLinesUpAction"]
+        },
+        {
+            "before": ["]", "e"],
+            "commands": ["editor.action.moveLinesDownAction"]
+        },
+        {
+            "before": ["[", "<space>"],
+            "commands": ["editor.action.insertLineBefore"]
+        },
+        {
+            "before": ["]", "<space>"],
+            "commands": ["editor.action.insertLineAfter"]
+        },
+        {
+            "before": ["<C-l>"],
+            "commands": [":nohl"]
+        },
+        {
+            "before": ["-"],
+            "commands": ["workbench.action.nextEditor"]
+        },
+        {
+            "before": ["_"],
+            "commands": ["workbench.action.previousEditor"]
+        },
+        {
+            "before": ["<Backspace>"],
+            "commands": ["workbench.action.quickOpenPreviousEditor"]
+        },
+        {
+            "before": ["B"],
+            "after": ["^"]
+        },
+        {
+            "before": ["E"],
+            "after": ["$"]
+        },
+        {
+            "before": ["^"],
+            "after": ["B"]
+        },
+        {
+            "before": ["$"],
+            "after": ["E"]
+        },
+        {
+            "before": ["<leader>", "d"],
+            "after": ["\"", "_", "d"]
+        },
+        {
+            "before": ["<leader>", "c", "j"],
+            "commands": ["editor.action.marker.next"]
+        },
+        {
+            "before": ["<leader>", "c", "k"],
+            "commands": ["editor.action.marker.prev"]
+        },
+        {
+            "before": ["<leader>", "n", "o"],
+            "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        {
+            "before": ["<leader>", "0"],
+            "commands": ["workbench.action.toggleZenMode"]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["B"],
+            "after": ["^"]
+        },
+        {
+            "before": ["E"],
+            "after": ["$"]
+        },
+        {
+            "before": ["^"],
+            "after": ["B"]
+        },
+        {
+            "before": ["$"],
+            "after": ["E"]
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.visualstar": true,
+    "vim.hlsearch": true,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.lineHeight": 22,
+    "workbench.colorTheme": "Material Theme",
+    "editor.renderFinalNewline": false,
+    "files.insertFinalNewline": true,
+    "vim.searchHighlightColor": "#ff9cac30",
+    "workbench.activityBar.visible": true,
+    "window.menuBarVisibility": "toggle",
+    "editor.minimap.enabled": false,
+    "vim.useSystemClipboard": true,
+    "window.zoomLevel": 1,
+    "files.trimTrailingWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    // "vim.debug.loggingLevelForConsole": "debug"
+    "vim.handleKeys": {
+        "<C-b>": false
+    },
+    "workbench.statusBar.visible": true,
+    "search.smartCase": true,
+    "git.autofetch": true
+}
