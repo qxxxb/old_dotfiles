@@ -121,6 +121,11 @@ let g:ale_rust_cargo_use_clippy=1
 let g:ale_fixers['rust']=['rustfmt']
 let g:ale_c_parse_compile_commands=1
 
+let g:ale_cpp_clang_executable='clang++-10'
+let g:ale_cpp_clang_options='-std=c++17 -Wall'
+let g:ale_cpp_gcc_executable='gcc-10'
+let g:ale_cpp_gcc_options='-std=c++17 -Wall'
+
 " ==========================================================
 " matchup
 " ==========================================================

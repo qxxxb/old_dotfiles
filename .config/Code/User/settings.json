@@ -126,7 +126,7 @@
     "editor.renderFinalNewline": false,
     "files.insertFinalNewline": true,
     "vim.searchHighlightColor": "#ff9cac30",
-    "workbench.activityBar.visible": true,
+    "workbench.activityBar.visible": false,
     "window.menuBarVisibility": "toggle",
     "editor.minimap.enabled": false,
     "vim.useSystemClipboard": true,
