@@ -257,6 +257,9 @@ exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agen
 # nm-applet
 exec --no-startup-id nm-applet
 
+# pulseaudio
+exec --no-startup-id sleep 5; pacmd set-default-sink 0
+
 #############
 #  Windows  #
 #############

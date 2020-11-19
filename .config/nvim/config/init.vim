@@ -90,7 +90,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-abolish'
 
 " Highlight current search result
-Plug 'qxxxb/vim-searchhi'
+" Plug 'qxxxb/vim-searchhi'
+Plug '~/Programs/vim-searchhi'
 
 " incsearch (dependency of `incsearch-fuzzy`)
 Plug 'haya14busa/incsearch.vim'

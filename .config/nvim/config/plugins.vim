@@ -212,3 +212,9 @@ let g:anzu_status_format=
 " ==========================================================
 
 let g:UltiSnipsSnippetDirectories=["UltiSnips", $HOME . "/.config/nvim/UltiSnips"]
+
+" ==========================================================
+" vimtex
+" ==========================================================
+
+let g:tex_flavor = 'latex'
