@@ -54,6 +54,9 @@ set mouse=a
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 
+nnoremap <leader>s :StripWhitespace<CR>
+xnoremap <leader>s :StripWhitespace<CR>
+
 " ==========================================================
 " Insert mode shortcuts
 " ==========================================================
