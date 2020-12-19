@@ -54,8 +54,9 @@ set mouse=a
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 
-nnoremap <leader>s :StripWhitespace<CR>
-xnoremap <leader>s :StripWhitespace<CR>
+nnoremap <leader>ss :StripWhitespace<CR>
+xnoremap <leader>ss :StripWhitespace<CR>
+nnoremap <leader>st :ToggleWhitespace<CR>
 
 " ==========================================================
 " Insert mode shortcuts

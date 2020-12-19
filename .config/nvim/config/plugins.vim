@@ -117,6 +117,9 @@ let g:ale_fixers['php']=['php_cs_fixer']
 let g:ale_fixers['javascript']=['prettier', 'eslint']
 let g:ale_fixers['python']=['autopep8', 'yapf']
 
+" Ignore star import warnings
+let g:ale_python_flake8_options='--ignore=F405,F403,E302,E305'
+
 let g:ale_rust_cargo_use_clippy=1
 let g:ale_fixers['rust']=['rustfmt']
 let g:ale_c_parse_compile_commands=1

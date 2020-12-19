@@ -40,18 +40,12 @@ Plug 'szw/vim-maximizer'
 " Distraction-free mode
 Plug 'junegunn/goyo.vim'
 
-" Note taking
-Plug 'vimoutliner/vimoutliner'
-
 " ==========================================================
 " Editing
 " ==========================================================
 
 " Management of parenthesis, brackets, etc.
 Plug 'tpope/vim-surround'
-
-" Adjust dates
-Plug 'tpope/vim-speeddating'
 
 " Detect indentation
 Plug 'tpope/vim-sleuth'
@@ -90,8 +84,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-abolish'
 
 " Highlight current search result
-" Plug 'qxxxb/vim-searchhi'
-Plug '~/Programs/vim-searchhi'
+Plug 'qxxxb/vim-searchhi'
 
 " incsearch (dependency of `incsearch-fuzzy`)
 Plug 'haya14busa/incsearch.vim'
@@ -214,9 +207,6 @@ Plug 'airblade/vim-gitgutter'
 
 " Repeat action from plugin
 Plug 'tpope/vim-repeat'
-
-" Calendar application
-Plug 'itchyny/calendar.vim'
 
 call plug#end()
 " Automatically executes:

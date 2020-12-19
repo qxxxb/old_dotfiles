@@ -11,6 +11,9 @@ export PATH=/usr/local/texlive/2018/bin/x86_64-linux:$PATH
 export INFOPATH=$INFOPATH:/usr/local/texlive/2018/texmf-dist/doc/info
 export MANPATH=$MANPATH:/usr/local/texlive/2018/texmf-dist/doc/man
 
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$HOME/go/bin:$PATH
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
